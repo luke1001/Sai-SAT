@@ -1,0 +1,273 @@
+// Colors
+
+@white: #fff;
+@gray: #d8e3ea;
+@dark-gray: #bccccf;
+@blue: #43bbf5;
+@red: #ff4b4b;
+
+
+@bgColor: @gray;
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.fadein {
+  -webkit-appearance: none;
+  -webkit-animation-name: fadein;  
+  -webkit-animation-iteration-count: 1;  
+  -webkit-animation-duration: 0.4s; 
+  -moz-appearance: none;
+  -moz-animation-name: fadein;  
+  -moz-animation-iteration-count: 1;  
+  -moz-animation-duration: 0.4s; 
+}
+
+@-webkit-keyframes blink {  
+  from { background-color: #06c; color: white}
+  to {background-color: inherit; color: inherit}
+}
+@-moz-keyframes blink {  
+  from { background-color: #06c; color: white}
+  to {background-color: inherit; color: inherit}
+}
+
+@-webkit-keyframes fadein {  
+  from { opacity: 0}
+  to { opacity: 1}
+}
+@-moz-keyframes fadein {  
+  from { opacity: 0}
+  to { opacity: 1}
+}
+
+.blink {
+  -webkit-appearance: none;
+  -webkit-animation-name: blink;  
+  -webkit-animation-iteration-count: 1;  
+  -webkit-animation-duration: 0.4s; 
+  -moz-appearance: none;
+  -moz-animation-name: blink;  
+  -moz-animation-iteration-count: 1;  
+  -moz-animation-duration: 0.4s; 
+}
+
+.press-scale {
+    -moz-transition: -moz-transform .12s ease-out;
+    -ms-transition: -ms-transform .12s ease-out;
+    -o-transition: -o-transform .12s ease-out;
+    -webkit-transition: -webkit-transform .12s ease-out;
+    transition: transform .12s ease-out;
+
+    &.pressed {
+        -moz-transform: scale(.95);
+        -ms-transform: scale(.95);
+        -o-transform: scale(.95);
+        -webkit-transform: scale(.95);
+        transform: scale(.95);
+    }
+
+    // Disabling highlight on touch in iOS mobile safari web apps
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+ul, ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.oneline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+body {
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", Arial, sans-serif;
+
+    background: url('img/background.png') repeat;
+
+    font-size: 1.1em;
+}
+
+.container {
+    height: 100%;
+    .fadein;
+}
+
+.index {
+    height: 5%;
+}
+
+.word {
+    font-family: serif;
+    color: #d14;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 120%;
+}
+
+.question {
+    // height: 20%;
+    padding: 2.4em 0 1.2em;
+
+    font-size: 200%;
+    line-height: 1.2em;
+    font-family: sans-serif;
+}
+
+.answers {
+    // height: 50%;
+
+    [class*="span"] {
+        // height: 100%;
+    }
+}
+
+
+.answer {
+    // min-height: 30%;
+    background: white;
+    cursor: pointer;
+
+    position: relative;
+
+    border: 0.1em solid transparent;
+    padding: 1.8em 1.5em;
+
+    // margin-bottom: 0.3em;
+
+    font-size: 130%;
+    font-family: sans-serif;
+    line-height: 1.3em;
+
+    .press-scale;
+
+    &:hover {
+        border-color: black;
+    }
+
+    .result {
+        position: absolute;
+        top: 0;
+        right: 10%;
+
+        height: 100%;
+        line-height: 100%;
+
+        font-size: 600%;
+        opacity: 0.8;
+
+        .icon-ok {
+            color: green;
+        }
+        .icon-remove {
+            color: red;
+        }
+    }
+
+}
+
+.next {
+    margin: 2em auto;
+    padding: 3em 5em;
+    // width: 10%;
+    text-align: center;
+    cursor: pointer;
+
+    .press-scale;
+
+    background-color: white;
+    border: 1px dashed black;
+
+    &:hover {
+        border-style: solid;
+    }
+}
+
+.process {
+    position: absolute;
+    top: 0;
+    height: 0.2em;
+    background-color: #d14;
+}
+
+//
+// Responsive: Large desktop and up
+// --------------------------------------------------
+
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 1.3em;
+    }
+
+}
+
+
+
+
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    body {
+        font-size: 1em;
+    }
+
+}
+
+
+
+
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+
+
+@media (max-width: 767px) {
+
+    body {
+        font-size: 0.7em;
+    }
+
+    .question {
+        padding: 1em 0 0.5;
+        font-size: 150%;
+    }
+
+    .answer {
+        padding: 1em 1em;
+        border-bottom: 1px solid #ddd;
+
+        .result {
+            font-size: 400%;
+        }
+    }
+
+}
+
+
+

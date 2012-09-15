@@ -83,7 +83,7 @@ class Quiz
         @show()
 
 $ ->
-    $.getJSON '/static/Barron 3500 eg.json', (json) ->
+    $.getJSON 'static/Barron 3500 eg.json', (json) ->
 
         answers = _.shuffle(json)
 
